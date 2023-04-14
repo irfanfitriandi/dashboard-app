@@ -38,7 +38,7 @@ const MenuCard = () => {
       {MAP_MENU_CARD.map((data, idx) => (
         <div
           key={idx}
-          className="bg-sec flex items-center gap-5 basis-1/5 rounded-lg h-[100px] px-8 cursor-pointer hover:bg-accg group ease-in duration-300"
+          className="bg-sec flex items-center gap-5 basis-1/5 rounded-lg h-[100px] px-8 cursor-pointer hover:bg-accg hover:scale-110 group ease-in duration-300"
         >
           <img src={data.img} alt={data.label} />
           <div className="flex flex-col gap-[2px]">

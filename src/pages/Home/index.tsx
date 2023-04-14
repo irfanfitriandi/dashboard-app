@@ -18,7 +18,7 @@ const App = () => {
         <h1 className="text-white text-3xl font-semibold">
           Marketing Dashboard
         </h1>
-        <div className="text-[#6C747D]">
+        <div className="text-[#6C747D] text-sm">
           Home / <span className="text-accg">Dashboard</span>
         </div>
       </div>

@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ArrowDown from "assets/arrow_down.svg";
-import EarningsChart from "assets/Charts/earnings_chart.svg";
-import EarningsChart2 from "assets/Charts/earnings_chart2.svg";
+import DoughnutChart from "components/DoughnutChart";
 
 const OPTION_TIME = [
   {
@@ -26,28 +25,43 @@ interface IEarnings {
 
 const Earnings = ({ showDropdown, handleShowDropdown }: IEarnings) => {
   const [optionTime, setOptionTime] = useState("This Week");
+  const [sales, setSales] = useState(151);
+  const [orders, setOrders] = useState(113);
 
-  const EARNINGS =
-    optionTime === "This Week"
-      ? {
-          chart: EarningsChart,
-          sales: "251K",
-          orders: "176K",
-        }
-      : {
-          chart: EarningsChart2,
-          sales: "165K",
-          orders: "147K",
-        };
+  const data = {
+    dataSales: [
+      { name: "Non Sales", value: 200 - sales },
+      { name: "Total Sales", value: sales },
+    ],
+    dataOrders: [
+      { name: "Non Orders", value: 200 - orders },
+      { name: "Total Orders", value: orders },
+    ],
+  };
+
+  useEffect(() => {
+    if (optionTime === "This Week") {
+      setSales(151);
+      setOrders(113);
+    } else if (optionTime === "Last Week") {
+      setSales(98);
+      setOrders(90);
+    } else if (optionTime === "2 Weeks ago") {
+      setSales(60);
+      setOrders(30);
+    } else {
+      setSales(180);
+      setOrders(160);
+    }
+  }, [optionTime]);
 
   return (
     <div className="bg-sec flex gap-5 pt-5 px-5 rounded-md basis-3/6">
       <div className="flex flex-col gap-6">
         <div className="text-white font-bold">Earnings</div>
-        <img
-          src={EARNINGS.chart}
-          alt="Earning chart"
-          className="cursor-pointer"
+        <DoughnutChart
+          dataSales={data.dataSales}
+          dataOrders={data.dataOrders}
         />
       </div>
       <div className="flex flex-col gap-7">
@@ -66,7 +80,9 @@ const Earnings = ({ showDropdown, handleShowDropdown }: IEarnings) => {
             {OPTION_TIME.map((data, idx) => (
               <div
                 key={idx}
-                onClick={() => setOptionTime(data.label)}
+                onClick={() => {
+                  setOptionTime(data.label);
+                }}
                 className="cursor-pointer flex items-center justify-between gap-4 hover:bg-[#546B9B] px-[10px] py-[5px] first:rounded-t-md last:rounded-b-md first:pt-[10px] last:pb-[10px] ease-in duration-300"
               >
                 {data.label}
@@ -83,14 +99,14 @@ const Earnings = ({ showDropdown, handleShowDropdown }: IEarnings) => {
           <span className="w-2 h-2 rounded-full bg-accg" />
           <div>
             <div className="text-sm text-white">Total Sales</div>
-            <div className="text-sm text-[#8A92A6]">{EARNINGS.sales}</div>
+            <div className="text-sm text-[#8A92A6]">{sales}K</div>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <span className="w-2 h-2 rounded-full bg-acco" />
           <div>
             <div className="text-sm text-white">Total Orders</div>
-            <div className="text-sm text-[#8A92A6]">{EARNINGS.orders}</div>
+            <div className="text-sm text-[#8A92A6]">{orders}K</div>
           </div>
         </div>
       </div>
