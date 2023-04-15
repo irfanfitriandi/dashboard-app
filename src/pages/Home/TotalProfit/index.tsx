@@ -1,6 +1,54 @@
 import ChevronDown from "assets/chevron_down.svg";
-import TotalProfitChart from "assets/Charts/totalprofit_chart.svg";
+import BarChartStacked from "components/BarChartStacked";
 import ReportChart from "assets/Charts/report_chart.svg";
+
+const data = [
+  {
+    month: "Jan",
+    earning: 120,
+    expense: -180,
+  },
+  {
+    month: "Feb",
+    earning: 220,
+    expense: -90,
+  },
+  {
+    month: "Mar",
+    earning: 330,
+    expense: -50,
+  },
+  {
+    month: "Apr",
+    earning: 300,
+    expense: -220,
+  },
+  {
+    month: "May",
+    earning: 125,
+    expense: -150,
+  },
+  {
+    month: "Jun",
+    earning: 50,
+    expense: -50,
+  },
+  {
+    month: "July",
+    earning: 220,
+    expense: -110,
+  },
+  {
+    month: "Aug",
+    earning: 270,
+    expense: -80,
+  },
+  {
+    month: "Sep",
+    earning: 90,
+    expense: -130,
+  },
+];
 
 const TotalProfit = () => {
   return (
@@ -19,11 +67,7 @@ const TotalProfit = () => {
             </div>
           </div>
         </div>
-        <img
-          src={TotalProfitChart}
-          alt="Total profit chart"
-          className="cursor-pointer"
-        />
+        <BarChartStacked data={data} className="text-[11px] font-semibold" />
       </div>
       <div className="flex flex-col items-center basis-2/6 mx-auto">
         <div className="flex gap-2 py-1 px-2 text-accg text-xs font-semibold border border-accg rounded-[5px] cursor-pointer">
