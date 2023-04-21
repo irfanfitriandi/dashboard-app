@@ -25,10 +25,10 @@ const data = [
 
 const Orders = () => {
   return (
-    <div className="bg-sec flex flex-col pt-5 px-7 rounded-md">
+    <div className="bg-sec flex flex-col ite pt-5 px-7 rounded-md basis-[30%]">
       <div className="text-base font-medium text-white">Orders</div>
       <div className="text-[28px] font-medium text-acco pb-5">189k</div>
-      <BarC data={data} className="-mx-5" />
+      <BarC data={data} className="mx-auto" />
     </div>
   );
 };

@@ -56,7 +56,7 @@ const Earnings = ({ showDropdown, handleShowDropdown }: IEarnings) => {
   }, [optionTime]);
 
   return (
-    <div className="bg-sec flex gap-5 pt-5 px-5 rounded-md basis-3/6">
+    <div className="bg-sec flex justify-center gap-5 pt-5 px-5 rounded-md basis-[40%]">
       <div className="flex flex-col gap-6">
         <div className="text-white font-bold">Earnings</div>
         <DoughnutChart
@@ -97,14 +97,14 @@ const Earnings = ({ showDropdown, handleShowDropdown }: IEarnings) => {
         </div>
         <div className="flex items-center gap-4">
           <span className="w-2 h-2 rounded-full bg-accg" />
-          <div>
+          <div className="whitespace-nowrap">
             <div className="text-sm text-white">Total Sales</div>
             <div className="text-sm text-[#8A92A6]">{sales}K</div>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <span className="w-2 h-2 rounded-full bg-acco" />
-          <div>
+          <div className="whitespace-nowrap">
             <div className="text-sm text-white">Total Orders</div>
             <div className="text-sm text-[#8A92A6]">{orders}K</div>
           </div>

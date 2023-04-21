@@ -53,7 +53,7 @@ const data = [
 const TotalProfit = () => {
   return (
     <div className="bg-sec flex pt-5 rounded-md">
-      <div className="flex flex-col gap-9 pb-6 border-r border-[#2E4B85] px-5 -mt-5">
+      <div className="flex flex-col basis-4/6 gap-9 pb-6 border-r border-[#2E4B85] px-5 -mt-5">
         <div className="flex justify-between pt-5">
           <div className="text-white font-bold">Total profit</div>
           <div className="flex gap-6 text-sm text-[#828282]">
@@ -67,7 +67,10 @@ const TotalProfit = () => {
             </div>
           </div>
         </div>
-        <BarChartStacked data={data} className="text-[11px] font-semibold" />
+        <BarChartStacked
+          data={data}
+          className="text-[11px] font-semibold mx-auto"
+        />
       </div>
       <div className="flex flex-col items-center basis-2/6 mx-auto">
         <div className="flex gap-2 py-1 px-2 text-accg text-xs font-semibold border border-accg rounded-[5px] cursor-pointer">

@@ -29,10 +29,10 @@ const data = [
 
 const Profit = () => {
   return (
-    <div className="bg-sec flex flex-col pt-5 px-7 rounded-md">
+    <div className="bg-sec flex flex-col pt-5 px-7 rounded-md basis-[30%]">
       <div className="text-base font-medium text-white">Profit</div>
       <div className="text-[28px] font-medium text-accg pb-5">8,24k</div>
-      <LineChartCartesian data={data} className="-mx-3" />
+      <LineChartCartesian data={data} className="mx-auto" />
     </div>
   );
 };

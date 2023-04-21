@@ -11,7 +11,7 @@ interface ILineChartCartesian {
 const LineChartCartesian = ({ data, className }: ILineChartCartesian) => {
   return (
     <LineChart width={120} height={80} data={data} className={className}>
-      <CartesianGrid strokeDasharray="3" stroke="#0A1826" />
+      <CartesianGrid strokeDasharray="3" stroke="#0A1826" horizontal={false} />
       <Tooltip
         contentStyle={{
           fontSize: 12,

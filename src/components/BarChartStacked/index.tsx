@@ -22,8 +22,8 @@ const BarChartStacked = ({ data, className }: IBarChartStacked) => {
       barSize={7}
       className={className}
     >
-      <XAxis dataKey="month" />
-      <YAxis />
+      <XAxis dataKey="month" tickLine={false} axisLine={false} />
+      <YAxis tickLine={false} axisLine={false} />
       <Tooltip
         contentStyle={{
           fontSize: 12,
